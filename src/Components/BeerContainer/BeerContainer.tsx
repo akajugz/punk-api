@@ -9,7 +9,7 @@ type BeerContainerProps = {
 export const BeerContainer = ({ beers }: BeerContainerProps) => {
   return (
     <>
-      <div>
+      <div className="beer-container">
         {beers.map((beer) => (
           <BeerCard
             name={beer.name}
