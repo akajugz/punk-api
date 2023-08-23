@@ -19,6 +19,8 @@ const ExploreBeers = ({ beers }: ExploreBeerProps) => {
     beer.name.toLowerCase().includes(searchBeer)
   );
 
+  const isBeerListed = filteredBeers.length > 0;
+
   return (
     <>
       <SearchBar
@@ -26,7 +28,14 @@ const ExploreBeers = ({ beers }: ExploreBeerProps) => {
         label="Search for your beer!"
         handleInput={handleInput}
       />
-      <BeerContainer beers={filteredBeers} />
+      {isBeerListed ? (
+        <BeerContainer beers={filteredBeers} />
+      ) : (
+        <p>
+          Sorry, we're out of stock on this one. Would you like to try a
+          different one?
+        </p>
+      )}
     </>
   );
 };

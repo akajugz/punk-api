@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import { BeerContainer } from "./Components/BeerContainer/BeerContainer";
 import { Beer } from "./Components/Types/Types";
 import ExploreBeers from "./Containers/ExploreBeers/ExploreBeers";
 import { Nav } from "./Components/Nav/Nav";
 import "./App.scss";
+import { HomePage } from "./Containers/HomePage/HomePage";
 
 function App() {
   const [beer, setBeer] = useState<Beer[]>([]);
@@ -29,6 +29,7 @@ function App() {
             path="/BeerContainer"
             element={<ExploreBeers beers={beer} />}
           />
+          <Route path="/" element={<HomePage />} />
         </Routes>
       </>
     </HashRouter>
