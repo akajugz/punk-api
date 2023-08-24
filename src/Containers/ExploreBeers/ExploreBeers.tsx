@@ -1,4 +1,5 @@
 import { useState, FormEvent } from "react";
+import { Link } from "react-router-dom";
 import { Beer } from "../../Components/Types/Types";
 import SearchBar from "../../Components/SearchBar/SearchBar";
 import { BeerContainer } from "../../Components/BeerContainer/BeerContainer";
@@ -28,6 +29,7 @@ const ExploreBeers = ({ beers }: ExploreBeerProps) => {
         label="Search for your beer!"
         handleInput={handleInput}
       />
+      <Link to={"/MoreInfoOnBeer"}>
       {isBeerListed ? (
         <BeerContainer beers={filteredBeers} />
       ) : (
@@ -36,6 +38,7 @@ const ExploreBeers = ({ beers }: ExploreBeerProps) => {
           different one?
         </p>
       )}
+      </Link>
     </>
   );
 };

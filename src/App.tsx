@@ -5,8 +5,9 @@ import ExploreBeers from "./Containers/ExploreBeers/ExploreBeers";
 import { Nav } from "./Components/Nav/Nav";
 import "./App.scss";
 import { HomePage } from "./Containers/HomePage/HomePage";
+import { MoreInfoOnBeer } from "./Components/MoreInfoOnBeer/MoreInfoOnBeer";
 
-function App() {
+const App = () => {
   const [beer, setBeer] = useState<Beer[]>([]);
 
   const getBeers = async () => {
@@ -25,15 +26,30 @@ function App() {
       <>
         <Nav />
         <Routes>
+          <Route path="/" element={<HomePage />} />
           <Route
             path="/BeerContainer"
             element={<ExploreBeers beers={beer} />}
           />
-          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/MoreInfoOnBeer"
+            element={
+              <MoreInfoOnBeer
+                name={""}
+                tagline={""}
+                first_brewed={""}
+                description={""}
+                image={""}
+                food_pairing={""}
+                brewers_tips={""}
+                contributed_by={""}
+              />
+            }
+          />
         </Routes>
       </>
     </HashRouter>
   );
-}
+};
 
 export default App;
