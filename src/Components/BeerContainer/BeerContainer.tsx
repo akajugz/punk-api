@@ -17,6 +17,7 @@ export const BeerContainer = ({ beers }: BeerContainerProps) => {
             tagline={beer.tagline}
             first_brewed={beer.first_brewed}
             image={beer.image_url}
+            id={beer.id}
           />
         ))}
       </div>

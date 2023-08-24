@@ -6,18 +6,9 @@ type MoreInfoOnBeerProps = {
   beer: Beer[];
 };
 
-
-// NEED OLLIE'S HELP
-
-// TRIED TO GET HOLD OF THE INFORMATION WITHOUT USING useParams FIRST - DIDN'T WORK
-// TRIED TO DEFINE THE PROPS BY MYSELF RATHER THAN IMPORTING THEM - DIDN'T WORK
-// TRIED TO USE THE .FIND FUNCTION WITH ID - DIDN'T WORK
-// TRIED TO USE THE .FIND FUNCTION WITH NAME - DIDN'T WORK
-
-
 export const MoreInfoOnBeer = ({ beer }: MoreInfoOnBeerProps) => {
-  const { name } = useParams();
-  const moreInfo = beer.find((beer) => beer.name === String(name));
+  const { beerId } = useParams();
+  const moreInfo = beer.find((beer) => beer.id === Number(beerId));
 
   if (moreInfo === undefined) {
     return <p>Beer not found</p>;

@@ -32,19 +32,8 @@ const App = () => {
             element={<ExploreBeers beers={beer} />}
           />
           <Route
-            path="/MoreInfoOnBeer"
-            element={
-              <MoreInfoOnBeer
-                name={""}
-                tagline={""}
-                first_brewed={""}
-                description={""}
-                image={""}
-                food_pairing={""}
-                brewers_tips={""}
-                contributed_by={""}
-              />
-            }
+            path="/MoreInfoOnBeer/:beerId"
+            element={<MoreInfoOnBeer beer={beer} id={1} />}
           />
         </Routes>
       </>
