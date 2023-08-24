@@ -10,7 +10,7 @@ function App() {
   const [beer, setBeer] = useState<Beer[]>([]);
 
   const getBeers = async () => {
-    const url = "https://api.punkapi.com/v2/beers";
+    const url = "https://api.punkapi.com/v2/beers?page=1&per_page=80";
     const res = await fetch(url);
     const data = await res.json();
     setBeer(data);

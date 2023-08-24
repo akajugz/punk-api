@@ -12,6 +12,7 @@ export const BeerContainer = ({ beers }: BeerContainerProps) => {
       <div className="beer-container">
         {beers.map((beer) => (
           <BeerCard
+            key={beer.id}
             name={beer.name}
             tagline={beer.tagline}
             first_brewed={beer.first_brewed}
