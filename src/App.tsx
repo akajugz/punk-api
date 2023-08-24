@@ -33,7 +33,7 @@ const App = () => {
           />
           <Route
             path="/MoreInfoOnBeer/:beerId"
-            element={<MoreInfoOnBeer beer={beer} id={1} />}
+            element={<MoreInfoOnBeer beer={beer} />}
           />
         </Routes>
       </>
