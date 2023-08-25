@@ -27,15 +27,15 @@ export const MoreInfoOnBeer = ({ beer }: MoreInfoOnBeerProps) => {
         </div>
         <div className="more-info-card__content">
           <p className="more-info-card__content--tag-line">
-            {moreInfo.tagline}
+            <strong>Tag line -</strong> {moreInfo.tagline}
           </p>
-          <p className="more-info-card__content--first-brewed">
-            {moreInfo.first_brewed}
+          <p className="more-info-card__content">
+          <strong>First brewed -</strong> {moreInfo.first_brewed}
           </p>
-          <p>{moreInfo.description}</p>
-          <p>{moreInfo.food_pairing}</p>
-          <p>{moreInfo.brewers_tips}</p>
-          <p>{moreInfo.contributed_by}</p>
+          <p className="more-info-card__content"> <strong>Description -</strong>{moreInfo.description}</p>
+          <p className="more-info-card__content"> <strong>Best food pairings -</strong>{moreInfo.food_pairing}</p>
+          <p className="more-info-card__content"><strong>Brewing tips -</strong>{moreInfo.brewers_tips}</p>
+          <p className="more-info-card__content"> <strong>Contributed by -</strong>{moreInfo.contributed_by}</p>
         </div>
       </div>
     </>

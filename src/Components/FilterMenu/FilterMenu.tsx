@@ -15,19 +15,20 @@ export const FilterMenu = ({
   label,
 }: FilterMenuProps) => {
   return (
-    <div>
-      <label>{label}</label>
-      {options.map((option) => (
-        <div key={option}>
+    <div className="filter">
+      <label className="filter__name">{label}</label>
+      {options.map((filterOptions) => (
+        <div className="filter__options" key={filterOptions}>
           <input
+            className="filter__options--buttons"
             type="radio"
-            id={option}
+            id={filterOptions}
             name="filter"
-            value={option}
-            checked={selected === option}
+            value={filterOptions}
+            checked={selected === filterOptions}
             onChange={onChange}
           />
-          <label htmlFor={option}>{option}</label>
+          <label htmlFor={filterOptions}>{filterOptions}</label>
         </div>
       ))}
     </div>

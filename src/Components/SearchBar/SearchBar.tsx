@@ -13,8 +13,9 @@ const SearchBar = ({ searchBeer, label, handleInput }: SearchBeerProps) => {
     <>
       <div className="searchbar">
         <label htmlFor={label} className="searchbar__heading">
-          Search Beers
+          Search Beers: 
         </label>
+        <br />
         <input
           className="searchbar__text-field"
           type="text"

@@ -9,7 +9,7 @@ export const Nav = () => {
                     BeerLand
                 </Link>
                 <Link to={"/BeerContainer"} className="nav__explore">
-                    Pub Crawl
+                    Beer Crawl
                 </Link>
             </div>
         </>

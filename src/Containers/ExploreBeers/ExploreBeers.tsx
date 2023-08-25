@@ -3,6 +3,7 @@ import { Beer } from "../../Components/Types/Types";
 import SearchBar from "../../Components/SearchBar/SearchBar";
 import { BeerContainer } from "../../Components/BeerContainer/BeerContainer";
 import { FilterMenu } from "../../Components/FilterMenu/FilterMenu";
+import "./ExploreBeers.scss"
 
 type ExploreBeerProps = {
   beers: Beer[];
@@ -17,20 +18,9 @@ const ExploreBeers = ({ beers }: ExploreBeerProps) => {
     setSearchBeer(input);
   };
 
-  // Radio Button functions:
-  // const handleFilterChange = (event: ChangeEvent<HTMLInputElement>) => {
-  //   const selectedOption = event.target.value;
-  //   setSelectedFilter(selectedOption);
-  // };
-
   const handleFilterChange = (event: ChangeEvent<HTMLInputElement>) => {
     const selectedOption = event.target.value;
-    if (selectedOption === selectedFilter) {
-      // If the selected radio button is the same as the current filter, turn it off
-      setSelectedFilter("");
-    } else {
-      setSelectedFilter(selectedOption);
-    }
+    setSelectedFilter(selectedOption);
   };
 
   const filteredBeers = beers
@@ -45,15 +35,17 @@ const ExploreBeers = ({ beers }: ExploreBeerProps) => {
       if (selectedFilter === "IBU 41+") {
         return beer.ibu >= 41;
       }
-      if (selectedFilter === "IMB 40-") {
+      if (selectedFilter === "IBU 40-") {
         return beer.ibu <= 40;
       }
       return true;
     });
+
   const isBeerListed = filteredBeers.length > 0;
 
   return (
     <>
+      <p className="explore-tagline">At your disposal, you have the search bar and the filter section to search the perfect beer for you!</p>
       <SearchBar
         searchBeer={searchBeer}
         label="Search for your beer!"
@@ -63,7 +55,13 @@ const ExploreBeers = ({ beers }: ExploreBeerProps) => {
       <FilterMenu
         onChange={handleFilterChange}
         selected={selectedFilter}
-        options={["All", "High ABV", "Acidity Less Than 4ph", "IBU 41+", "IMB 40-"]}
+        options={[
+          "All",
+          "High ABV",
+          "Acidity Less Than 4ph",
+          "IBU 41+",
+          "IBU 40-",
+        ]}
         label="Filter by:"
       />
 

@@ -21,7 +21,7 @@ export const HomePage = () => {
         <p className="home__instructions">
           Click on{" "}
           <Link to={"/BeerContainer"} className="pub-crawl-button">
-            Pub Crawl
+            Beer Crawl
           </Link>{" "}
           to know everything there is to know about beers!
         </p>
