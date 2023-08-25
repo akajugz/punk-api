@@ -21,3 +21,38 @@
         margin-bottom: 30px;
     }
 }
+
+@media screen and (min-width: 1024px) {
+    .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 30px;
+
+    &__heading {
+        text-decoration: underline;
+        font-size: 50px;
+        margin-top: 30px;
+    }
+
+    &__tagline {
+        color: rgb(49, 47, 47);
+        margin-top: 30px;
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    &__photo {
+        width: 500px;
+        margin: auto;
+    }
+
+    &__instructions {
+        color: rgb(49, 47, 47);
+        margin-top: 30px;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}
+}

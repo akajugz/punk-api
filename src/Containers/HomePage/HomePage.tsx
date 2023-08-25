@@ -23,8 +23,9 @@ export const HomePage = () => {
           <Link to={"/BeerContainer"} className="pub-crawl-button">
             Beer Crawl
           </Link>{" "}
-          to know everything there is to know about beers!
+          to start your journey. 
         </p>
+        <p>Don't drink and drive!</p>
       </div>
     </>
   );

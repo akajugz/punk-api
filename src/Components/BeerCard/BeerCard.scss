@@ -31,3 +31,39 @@
     }
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .beer-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+  margin-top: 40px;
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 20px;
+
+  &__image {
+    width: 40px;
+    height: 120px;
+    margin: auto;
+  }
+
+  &__content {
+    text-align: center;
+
+    &--name {
+      font-size: 25px;
+      color: black;
+    }
+
+    &--tag-line {
+      font-size: 18px;
+    }
+
+    &--first-brewed {
+      font-size: 18px;
+    }
+  }
+}
+}
