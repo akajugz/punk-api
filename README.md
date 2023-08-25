@@ -22,47 +22,47 @@ I fist started the project by working on the plan and layout the ground works. T
 
 - I also decided to add a few extra post-it notes to make sure that I know and remember what different functions and different syntax are like. This allowed me to spend less time trying to figure out the syntax and more time figuring out the logic of it the project.
 
-![Alt text](Setup.png)
+![Alt text](readme-photos/Setup.png)
+
+The website design:
+
+- The homepage -
+
+![Alt text](readme-photos/homepage.png)
+I've got two buttons on the homepage that will allow you to navigated to the main content for the website.
+To access the main content, you can either click on navigation button "Beer Crawl" or click the button in the body text.
+
+The BeerLand logo has been turned into a home button so at any point if the user wants to come back to the home page, they can simply click on that button.
+
+- Mobile view for Beer Crawl -
+
+![Alt text](readme-photos/mobileView.png)
+
+In the mobile view I tried to keep the design as simple and clutter free as possible "less is more".
+
+I've got a simple but functioning search bar that allows you to search for a specific beers and a filter option that allows you to filter through the beers depending on the options selected.
+
+- The desktop view:
+
+![Alt text](readme-photos/desktopView.png)
+
+With the search bar and the filter section remaining the same; for the desktop view, the only difference you'll notice is the way the beers and the information is displayed. With the wider screen there was a lot more room to move beer cards around. So I put them in a grid form with 3 rows.
 
 Sample code:
 
 - In the code snippet below I was struggling to use the useParams correctly due to minor error. The beerId that's collection the id of the beer clicked on was being used a string rather than a number. After fixing the small issue, the code worked perfectly fine without any issues.
 
-const { beerId } = useParams();
-   const moreInfo = beer.find((beer) => beer.id === Number(beerId));
-
-if (moreInfo === undefined) {
-   return <p>Beer not found</p>;
-}
+![Alt text](readme-photos/useParams.png)
 
 - Here I have the main logic for my radio buttons and the filtering or the radio button. In the first snippet you'll see that the filter is being used for searchBeer - that was the initial purpose of it. This piece of code was to be used for the search bar and for me to create another function for the radio buttons.
 
 The original search bar function was:
 
-const filteredBeers = beers.filter((beer) =>
-   beer.name.toLowerCase().includes(searchBeer)
-);
+![Alt text](readme-photos/searchbarCode.png)
 
 Modified with the addition of the radio buttons:
 
-const filteredBeers = beers
-    .filter((beer) => beer.name.toLowerCase().includes(searchBeer))
-    .filter((beer) => {
-      if (selectedFilter === "High ABV") {
-        return beer.abv >= 6.0;
-      }
-      if (selectedFilter === "Acidity Less Than 4ph") {
-        return beer.ph < 4;
-      }
-      if (selectedFilter === "IBU 41+") {
-        return beer.ibu >= 41;
-      }
-      if (selectedFilter === "IMB 40-") {
-        return beer.ibu <= 40;
-      }
-      return true;
-    });
-
+![Alt text](readme-photos/searchandfiltercode.png)
 
 Testing:
 
@@ -73,4 +73,3 @@ Improvements:
 - I want to be able to add more features to the project. For example, random facts to show up on the home page every time the page is loaded.
 - The filter to take multiple input rather than one at a time.
 - To get access to all 300+ beers.
-
